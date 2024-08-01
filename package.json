@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "description": "Ark Protocol implementation on top of MEM Lambda",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy-ark-contract": "node ./contract-scripts/deploy.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/weaveVM/ark-lambda/issues"
   },
-  "homepage": "https://github.com/weaveVM/ark-lambda#readme"
+  "homepage": "https://github.com/weaveVM/ark-lambda#readme",
+  "dependencies": {
+    "axios": "^1.7.3",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.1",
+    "fs": "^0.0.1-security"
+  }
 }
