@@ -1,0 +1,23 @@
+{
+  "name": "ark-lambda",
+  "version": "0.0.1",
+  "description": "Ark Protocol implementation on top of MEM Lambda",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weaveVM/ark-lambda.git"
+  },
+  "keywords": [
+    "lambda",
+    "MEM"
+  ],
+  "author": "charmful0x",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/weaveVM/ark-lambda/issues"
+  },
+  "homepage": "https://github.com/weaveVM/ark-lambda#readme"
+}
