@@ -1,4 +1,11 @@
+<p align="center">
+  <a href="https://wvm.dev">
+    <img src="https://raw.githubusercontent.com/weaveVM/.github/main/profile/bg.png">
+  </a>
+</p>
+
 ## About
+Ark Lambda is an implementation of the Ark protocol (multichain identity attestation protocol) on top of MEM Lambda.
 
 ## Deployment
 
