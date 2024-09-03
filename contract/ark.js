@@ -4,6 +4,7 @@ export async function handle(state, action) {
   if (input.function === "linkArweaveAddress") {
     // EOA address
     const caller = lambda.msg.sender.toLowerCase();
+    const call_txid = lambda.tx.id;
     // function call inputs
     const { arweave_owner, arweave_sig } = input;
     // sig verification fn takes the EOA address to use it in the
@@ -17,12 +18,7 @@ export async function handle(state, action) {
       state.arks[caller] = [];
     }
 
-    ContractAssert(
-      !state.arks[caller].includes(arweave_address),
-      "ERROR_AR_ADDRESS_ADDED",
-    );
-
-    state.arks[caller].push(arweave_address);
+    state.arks[caller].push({arweave_address, call_txid});
     return { state };
   }
 
@@ -36,7 +32,7 @@ export async function handle(state, action) {
     // convert JWK to address format
     const arweave_address = await _ownerToAddress(arweave_owner);
     const arweave_address_index_in_ark = state.arks[caller].findIndex(
-      (addr) => addr == arweave_address,
+      (addr) => addr.arweave_address == arweave_address,
     );
     ContractAssert(
       arweave_address_index_in_ark >= 0,
@@ -57,7 +53,7 @@ export async function handle(state, action) {
       // the AR sig msg takes the message from state(state.sig_messages), decryptedOwner and EOA,
       // all separated by "::" each
       const encodedMessage = btoa(
-        `${sigBody[sigBody.length - 1]}::${decryptedOwner}::${evm_caller}`,
+        `${sigBody[sigBody.length - 1]}::${decryptedOwner}::${evm_caller}::${state.counter}`,
       );
 
       const isValid = (
@@ -72,6 +68,7 @@ export async function handle(state, action) {
         "ERROR_SIGNATURE_ALREADY_USED",
       );
       state.signatures.push(signature);
+      state.counter += 1;
     } catch (error) {
       throw new ContractError("ERROR_INVALID_CALLER_SIGNATURE");
     }
