@@ -1,6 +1,7 @@
 {
     "arks": {},
     "sig_messages": ["ark-lambda-testnetv0"],
+    "counter": 0,
     "molecule_endpoints": {
       "ar_mem": "http://ar.molecule.sh/ar-auth",
       "ar_ota": "https://molecules-exm.herokuapp.com/ar-ota"
