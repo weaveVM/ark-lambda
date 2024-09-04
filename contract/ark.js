@@ -47,7 +47,7 @@ export async function handle(state, action) {
   async function _verifyArSignature(owner, signature, evm_caller) {
     try {
       const decryptedOwner = atob(owner);
-      _validatePubKeySyntax(owner);
+      _validatePubKeySyntax(decryptedOwner);
 
       const sigBody = state.sig_messages;
       // the AR sig msg takes the message from state(state.sig_messages), decryptedOwner and EOA,
@@ -75,10 +75,10 @@ export async function handle(state, action) {
   }
 
   async function _ownerToAddress(pubkey) {
-    const decryptedPubKey = atob(pubkey);
     try {
+      const decryptedOwner = atob(pubkey);
       const req = await EXM.deterministicFetch(
-        `${state.molecule_endpoints.ar_ota}/${decryptedPubKey}`,
+        `${state.molecule_endpoints.ar_ota}/${decryptedOwner}`,
       );
       const address = req.asJSON().address;
       _validateArweaveAddress(address);
