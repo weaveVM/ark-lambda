@@ -25,7 +25,7 @@ N.B: with MEM Lambda there is no need to authenticate the EVM caller as it's inj
 
 ## Server Methods
 
-### server endpoint: 
+### server endpoint: https://ark-lambda-31b26d23a766.herokuapp.com/
 
 ### 1- GET /arks
 
