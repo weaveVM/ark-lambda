@@ -41,7 +41,7 @@ app.post("/is-ark-user", async (req, res) => {
 
   const arks = await getArks();
   const user = accounts?.wallet;
-  const user_exists = arks[user.toLowerCase()].length;
+  const user_exists = arks[user.toLowerCase()]?.length;
 
   if (!user_exists) {
     return res.status(400).send({
