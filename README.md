@@ -15,7 +15,7 @@ run [./contract-scripts/deploy.js](./contract-scripts/deploy.js) to deploy a con
 
 #### ark-lambda contract address: 
 
-[0xcf12cd22ee7f2cebf632ae1f867faebcb270fbb98de8e3b7321560cd487922ca](https://wvm-lambda-0755acbdae90.herokuapp.com/state/0xcf12cd22ee7f2cebf632ae1f867faebcb270fbb98de8e3b7321560cd487922ca)
+[0xcf12cd22ee7f2cebf632ae1f867faebcb270fbb98de8e3b7321560cd487922ca](https://lambda.pink/state/0xcf12cd22ee7f2cebf632ae1f867faebcb270fbb98de8e3b7321560cd487922ca)
 
 ## Interaction
 
