@@ -23,5 +23,28 @@ check [./contract-scripts/interaction.js](./contract-scripts/interaction.js) to 
 
 N.B: with MEM Lambda there is no need to authenticate the EVM caller as it's injected in the MEM Lambda context under `lambda.msg.sender` -- Ark Lambda bidirectional addresses linkage validity is checked by the message body of the Arweave signature which consists of `msg_state_prefix::arweave_owner::evm_eoa` ([check in smart contract](./contract/ark.js#59))
 
+## Server Methods
+
+### server endpoint: 
+
+### 1- GET /arks
+
+```bash
+curl -X GET $SERVER_ENDPOINT/arks
+```
+
+### 2- POST /is-ark-user
+
+```bash
+curl -X POST $SERVER_ENDPOINT/is-ark-user \
+-H "Content-Type: application/json" \
+-H "x-api-key: $ZEALY_API_KEY" \
+-d '{
+  "accounts": {
+    "wallet": "$EVM_WALLET_ADDR"
+  }
+}'
+```
+
 ## License
 This projects is licensed user the [MIT License](./LICENSE)
