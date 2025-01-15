@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import fs from "fs";
 
 dotenv.config();
-const SEQUENCER_ADDRESS = "0x197f818c1313dc58b32d88078ecdfb40ea822614";
+const SEQUENCER_ADDRESS = "0x0000000000000000000000000000000000000000";
 const WVM_RPC_URL= "https://testnet-rpc.wvm.dev"
 const SEQUENCER_ENDPOINT = "https://wvm-lambda-0755acbdae90.herokuapp.com";
 

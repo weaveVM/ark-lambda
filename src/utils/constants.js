@@ -1,1 +1,1 @@
-export const ARK_LAMBDA_CONTRACT = "0xcf12cd22ee7f2cebf632ae1f867faebcb270fbb98de8e3b7321560cd487922ca";
+export const ARK_LAMBDA_CONTRACT = "0x3dddbb184e50e93b1fd32e75acf62abdea03a21de32822b96f19d713056f0d1b";
